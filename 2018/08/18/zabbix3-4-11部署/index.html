@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Linux automationroad operation road">
+<meta name="description" content="centos7下安装zabbix3.4.11服务端和客户端1.安装MySQL5.712345678910111213141516171819202122232425262728#引入mysql源wget &amp;lt;https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm#安装mysql源rpm -ivh mysql80-">
 <meta name="keywords" content="Linux operation">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Linux自动化运维之路">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zabbix3.4.11部署">
+<meta property="og:url" content="http://yoursite.com/2018/08/18/zabbix3-4-11部署/index.html">
 <meta property="og:site_name" content="Linux自动化运维之路">
-<meta property="og:description" content="Linux automationroad operation road">
+<meta property="og:description" content="centos7下安装zabbix3.4.11服务端和客户端1.安装MySQL5.712345678910111213141516171819202122232425262728#引入mysql源wget &amp;lt;https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm#安装mysql源rpm -ivh mysql80-">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-19T01:28:55.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux自动化运维之路">
-<meta name="twitter:description" content="Linux automationroad operation road">
+<meta name="twitter:title" content="zabbix3.4.11部署">
+<meta name="twitter:description" content="centos7下安装zabbix3.4.11服务端和客户端1.安装MySQL5.712345678910111213141516171819202122232425262728#引入mysql源wget &amp;lt;https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm#安装mysql源rpm -ivh mysql80-">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/18/zabbix3-4-11部署/"/>
 
 
 
 
 
-  <title>Linux自动化运维之路</title>
+  <title>zabbix3.4.11部署 | Linux自动化运维之路</title>
   
 
 
@@ -144,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -250,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/18/zabbix3-4-11部署/" itemprop="url">zabbix3.4.11部署</a></h1>
+          <h1 class="post-title" itemprop="name headline">zabbix3.4.11部署</h1>
         
 
         <div class="post-meta">
@@ -302,9 +300,7 @@
       
 
       
-        
-          
-            <h1 id="centos7下安装zabbix3-4-11服务端和客户端"><a href="#centos7下安装zabbix3-4-11服务端和客户端" class="headerlink" title="centos7下安装zabbix3.4.11服务端和客户端"></a>centos7下安装zabbix3.4.11服务端和客户端</h1><h2 id="1-安装MySQL5-7"><a href="#1-安装MySQL5-7" class="headerlink" title="1.安装MySQL5.7"></a>1.安装MySQL5.7</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">引入mysql源</span></span><br><span class="line">wget &lt;https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash">安装mysql源</span></span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash">源包管理工具</span></span><br><span class="line">yum -y install yum-utils</span><br><span class="line"><span class="meta">#</span><span class="bash">关闭默认安装的mysql8</span></span><br><span class="line">yum-config-manager --disable mysql80-community</span><br><span class="line"><span class="meta">#</span><span class="bash">启用安装mysql5.7</span></span><br><span class="line">yum-config-manager --enable mysql57-community</span><br><span class="line"><span class="meta">#</span><span class="bash">安装mysql5.7</span></span><br><span class="line">yum install mysql-community-server -y</span><br><span class="line"><span class="meta">#</span><span class="bash">启动mysql5.7</span></span><br><span class="line">systemctl start mysqld.service</span><br><span class="line"><span class="meta">#</span><span class="bash">查看临时密码</span></span><br><span class="line">grep 'temporary password' /var/log/mysqld.log | awk -F '[:]' '&#123;print $4&#125;' | sed 's/ //g'</span><br><span class="line"><span class="meta">#</span><span class="bash">设置新的密码（修改临时密码）</span></span><br><span class="line"><span class="meta">#</span><span class="bash">方法1进入mysql控制台修改</span></span><br><span class="line"><span class="meta">#</span><span class="bash">进入mysql交互工具</span></span><br><span class="line">mysql -uroot -ptemp_passwd</span><br><span class="line"><span class="meta">#</span><span class="bash">修改密码</span></span><br><span class="line">ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_passwd';</span><br><span class="line"><span class="meta">#</span><span class="bash">方法2，命令行修改密码</span></span><br><span class="line">mysqladmin -uroot -ptemp_passwd password new_passwd</span><br><span class="line"><span class="meta">#</span><span class="bash">设置用户 root 只可以在本地被访问</span></span><br><span class="line">mysql -uroot -pnew_passwd -e "grant all privileges on *.* to root@"localhost" identified by "new_passwd";" </span><br><span class="line"><span class="meta">#</span><span class="bash">刷新</span></span><br><span class="line">mysql -uroot -pnew_passwd -e "flush privileges;"</span><br></pre></td></tr></table></figure>
+        <h1 id="centos7下安装zabbix3-4-11服务端和客户端"><a href="#centos7下安装zabbix3-4-11服务端和客户端" class="headerlink" title="centos7下安装zabbix3.4.11服务端和客户端"></a>centos7下安装zabbix3.4.11服务端和客户端</h1><h2 id="1-安装MySQL5-7"><a href="#1-安装MySQL5-7" class="headerlink" title="1.安装MySQL5.7"></a>1.安装MySQL5.7</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">引入mysql源</span></span><br><span class="line">wget &lt;https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash">安装mysql源</span></span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash">源包管理工具</span></span><br><span class="line">yum -y install yum-utils</span><br><span class="line"><span class="meta">#</span><span class="bash">关闭默认安装的mysql8</span></span><br><span class="line">yum-config-manager --disable mysql80-community</span><br><span class="line"><span class="meta">#</span><span class="bash">启用安装mysql5.7</span></span><br><span class="line">yum-config-manager --enable mysql57-community</span><br><span class="line"><span class="meta">#</span><span class="bash">安装mysql5.7</span></span><br><span class="line">yum install mysql-community-server -y</span><br><span class="line"><span class="meta">#</span><span class="bash">启动mysql5.7</span></span><br><span class="line">systemctl start mysqld.service</span><br><span class="line"><span class="meta">#</span><span class="bash">查看临时密码</span></span><br><span class="line">grep 'temporary password' /var/log/mysqld.log | awk -F '[:]' '&#123;print $4&#125;' | sed 's/ //g'</span><br><span class="line"><span class="meta">#</span><span class="bash">设置新的密码（修改临时密码）</span></span><br><span class="line"><span class="meta">#</span><span class="bash">方法1进入mysql控制台修改</span></span><br><span class="line"><span class="meta">#</span><span class="bash">进入mysql交互工具</span></span><br><span class="line">mysql -uroot -ptemp_passwd</span><br><span class="line"><span class="meta">#</span><span class="bash">修改密码</span></span><br><span class="line">ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_passwd';</span><br><span class="line"><span class="meta">#</span><span class="bash">方法2，命令行修改密码</span></span><br><span class="line">mysqladmin -uroot -ptemp_passwd password new_passwd</span><br><span class="line"><span class="meta">#</span><span class="bash">设置用户 root 只可以在本地被访问</span></span><br><span class="line">mysql -uroot -pnew_passwd -e "grant all privileges on *.* to root@"localhost" identified by "new_passwd";" </span><br><span class="line"><span class="meta">#</span><span class="bash">刷新</span></span><br><span class="line">mysql -uroot -pnew_passwd -e "flush privileges;"</span><br></pre></td></tr></table></figure>
 <h2 id="2-安装zabbix3-4"><a href="#2-安装zabbix3-4" class="headerlink" title="2.安装zabbix3.4"></a>2.安装zabbix3.4</h2><h5 id="安装前注意-SELinux和防火墙检查"><a href="#安装前注意-SELinux和防火墙检查" class="headerlink" title="安装前注意 SELinux和防火墙检查"></a>安装前注意 SELinux和防火墙检查</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">临时关闭selinux</span></span><br><span class="line">setenforce 1</span><br><span class="line"><span class="meta">#</span><span class="bash">永久关闭selinux</span></span><br><span class="line">sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config</span><br><span class="line"><span class="meta">#</span><span class="bash">关闭防火墙和开机不启动（生产环境慎用，可以选择开发对应的端口）</span></span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
 <h4 id="安装zabbix服务端"><a href="#安装zabbix服务端" class="headerlink" title="安装zabbix服务端"></a>安装zabbix服务端</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">引入zabbix源</span></span><br><span class="line">rpm -ivh &lt;http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-release-3.4-2.el7.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash">安装zabbix服务端</span></span><br><span class="line">yum -y install zabbix-server-mysql zabbix-web-mysql</span><br><span class="line"><span class="meta">#</span><span class="bash">创建数据库zabbix及其用户</span></span><br><span class="line">mysql -uroot -pnew_passwd -e 'create database zabbix character set utf8 collate utf8_bin;'</span><br><span class="line"><span class="meta">#</span><span class="bash">授权</span></span><br><span class="line">mysql -uroot -pnew_passwd -e 'grant all privileges on zabbix.* to zabbix@localhost identified by "Zabbix1!";'</span><br><span class="line"><span class="meta">#</span><span class="bash">导入zabbix需要的表</span></span><br><span class="line">zcat /usr/share/doc/zabbix-server-mysql-*/create.sql.gz | mysql -uzabbix -pZabbix1! zabbix</span><br><span class="line"><span class="meta">#</span><span class="bash">配置zabbixserver连接mysql</span></span><br><span class="line">sed -i.ori '126a DBPassword=Zabbix1!' /etc/zabbix/zabbix_server.conf</span><br><span class="line"><span class="meta">#</span><span class="bash">添加时区</span></span><br><span class="line">sed -i.ori '18a php_value date.timezone  Asia/Shanghai' /etc/httpd/conf.d/zabbix.conf</span><br><span class="line"><span class="meta">#</span><span class="bash">解决图形列表下中文乱码</span></span><br><span class="line">yum -y install wqy-microhei-fonts</span><br><span class="line">mv /usr/share/fonts/dejavu/DejaVuSans.ttf /usr/share/fonts/dejavu/DejaVuSans.ttf.bak</span><br><span class="line">cp -f /usr/share/fonts/wqy-microhei/wqy-microhei.ttc /usr/share/fonts/dejavu/DejaVuSans.ttf</span><br><span class="line"><span class="meta">#</span><span class="bash">启动服务zabbixserver和http</span></span><br><span class="line">systemctl start zabbix-server</span><br><span class="line">systemctl start httpd</span><br><span class="line"><span class="meta">#</span><span class="bash">写入开机自启动</span></span><br><span class="line">chmod +x /etc/rc.d/rc.local</span><br><span class="line">cat &gt;&gt;/etc/rc.d/rc.local&lt;&lt;EOF</span><br><span class="line">systemctl start mysqld.service</span><br><span class="line">systemctl start httpd</span><br><span class="line">systemctl start zabbix-server</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
 <p>echo “浏览器访问 <a href="http://%60hostname/" target="_blank" rel="noopener">http://`hostname</a> -I | awk ‘{print $1}’`/zabbix”</p>
@@ -312,8 +308,6 @@
 <p>密码：zabbix</p>
 <h4 id="zabbix客户端部署"><a href="#zabbix客户端部署" class="headerlink" title="zabbix客户端部署"></a>zabbix客户端部署</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装zabbix客户端，如果是在zabbix服务端下直接安装，在被监控端需要先引入与服务端相同zabbix源</span></span><br><span class="line">yum -y install zabbix-agent zabbix-get</span><br><span class="line"><span class="meta">#</span><span class="bash">客户端配置</span></span><br><span class="line">sed -i '97c Server=192.168.1.162' /etc/zabbix/zabbix_agentd.conf</span><br><span class="line">sed -i '138c ServerActive=192.168.1.162' /etc/zabbix/zabbix_agentd.conf</span><br><span class="line">sed -i '149c Hostname=hjzabbix' /etc/zabbix/zabbix_agentd.conf</span><br><span class="line">systemctl start zabbix-agent.service</span><br><span class="line">echo "systemctl start zabbix-agent.service" &gt;&gt; /etc/rc.d/rc.local</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -330,286 +324,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/my-first-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="浪子尘心">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Linux自动化运维之路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/17/my-first-blog/" itemprop="url">最小化安装centos7后安装桌面系统</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T04:36:15+08:00">
-                2018-08-18
-              </time>
+              <a href="/2018/08/17/my-first-blog/" rel="next" title="最小化安装centos7后安装桌面系统">
+                <i class="fa fa-chevron-left"></i> 最小化安装centos7后安装桌面系统
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux技巧/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux技巧</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          工作中使用的容易忘记的小技巧
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/17/my-first-blog/">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="浪子尘心">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Linux自动化运维之路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/17/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T20:43:23+08:00">
-                2018-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -619,10 +355,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -630,6 +367,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -650,8 +391,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -711,6 +461,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#centos7下安装zabbix3-4-11服务端和客户端"><span class="nav-number">1.</span> <span class="nav-text">centos7下安装zabbix3.4.11服务端和客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装MySQL5-7"><span class="nav-number">1.1.</span> <span class="nav-text">1.安装MySQL5.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装zabbix3-4"><span class="nav-number">1.2.</span> <span class="nav-text">2.安装zabbix3.4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装前注意-SELinux和防火墙检查"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">安装前注意 SELinux和防火墙检查</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装zabbix服务端"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">安装zabbix服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zabbix客户端部署"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">zabbix客户端部署</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -844,6 +610,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
