@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Linux自动化运维之路</title>
+  
+  <subtitle>学海无涯，知识有岸</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/automationroad/"/>
+  <updated>2018-08-19T15:15:42.460Z</updated>
+  <id>https://github.com/automationroad/</id>
+  
+  <author>
+    <name>浪子尘心</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zabbix3.4.11部署</title>
+    <link href="https://github.com/automationroad/2018/08/18/zabbix3-4/"/>
+    <id>https://github.com/automationroad/2018/08/18/zabbix3-4/</id>
+    <published>2018-08-18T13:28:06.000Z</published>
+    <updated>2018-08-19T15:15:42.460Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;centos7下安装zabbix3-4-11服务端和客户端&quot;&gt;&lt;a href=&quot;#centos7下安装zabbix3-4-11服务端和客户端&quot; class=&quot;headerlink&quot; title=&quot;centos7下安装zabbix3.4.11服务端和客户端&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+      <category term="zabbix系列" scheme="https://github.com/automationroad/categories/zabbix%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="监控" scheme="https://github.com/automationroad/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+      <category term="自动化" scheme="https://github.com/automationroad/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+  </entry>
+  
+</feed>
