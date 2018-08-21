@@ -25,11 +25,7 @@
     
     <summary type="html">
     
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;centos7下安装zabbix3-4-11服务端和客户端&quot;&gt;&lt;a href=&quot;#centos7下安装zabbix3-4-11服务端和客户端&quot; class=&quot;headerlink&quot; title=&quot;centos7下安装zabbix
-      
+      &lt;h1 id=&quot;centos7下安装zabbix3-4-11服务端和客户端&quot;&gt;&lt;a href=&quot;#centos7下安装zabbix3-4-11服务端和客户端&quot; class=&quot;headerlink&quot; title=&quot;centos7下安装zabbix3.4.11服务端和客户端&quot;&gt;&lt;/a&gt;centos7下安装zabbix3.4.11服务端和客户端&lt;/h1&gt;&lt;h2 id=&quot;安装前注意-SELinux和防火墙检查&quot;&gt;&lt;a href=&quot;#安装前注意-SELinux和防火墙检查&quot; class=&quot;headerlink&quot; title=&quot;安装前注意 SELinux和防火墙检查&quot;&gt;&lt;/a&gt;安装前注意 SELinux和防火墙检查&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;临时关闭selinux&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;setenforce 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;永久关闭selinux&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sed -i &quot;s/SELINUX=enforcing/SELINUX=disabled/g&quot; /etc/selinux/config&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;关闭防火墙和开机不启动（生产环境慎用，可以选择开放对应的端口）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;systemctl stop firewalld.service&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;systemctl disable firewalld.service&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
