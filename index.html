@@ -357,7 +357,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-26T10:48:10+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-26T18:20:43+08:00">
                 2018-08-26
               </time>
             
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  768
+                  1,864
                 </span>
               
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  8
                 </span>
               
             </div>
@@ -445,7 +445,11 @@
 
       
         
-          <h1 id="centos7下安装zabbix3-4-11服务端和客户端"><a href="#centos7下安装zabbix3-4-11服务端和客户端" class="headerlink" title="centos7下安装zabbix3.4.11服务端和客户端"></a>centos7下安装zabbix3.4.11服务端和客户端</h1><h2 id="安装前注意-SELinux和防火墙检查"><a href="#安装前注意-SELinux和防火墙检查" class="headerlink" title="安装前注意 SELinux和防火墙检查"></a>安装前注意 SELinux和防火墙检查</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>临时关闭selinux</span><br><span class="line">setenforce 1</span><br><span class="line"><span class="meta">#</span>永久关闭selinux</span><br><span class="line">sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config</span><br><span class="line"><span class="meta">#</span>关闭防火墙和开机不启动（生产环境慎用，可以选择开放对应的端口）</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+          <h1 id="centos7下安装zabbix3-4-11服务端和客户端"><a href="#centos7下安装zabbix3-4-11服务端和客户端" class="headerlink" title="centos7下安装zabbix3.4.11服务端和客户端"></a>centos7下安装zabbix3.4.11服务端和客户端</h1><h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>操作系统：centos7</p>
+<p>数据库：MySQL5.7</p>
+<p>zabbix版本：3.4.12</p>
+<p>zabbix-server IP ：192.168.181.129</p>
+<p>zabbix-agent IP：192.168.181.130</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/25/zabbix3-4/#more" rel="contents">
@@ -815,7 +819,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">2.7k</span>
+    <span title="博客全站字数">3.8k</span>
   
 </div>
 
