@@ -114,7 +114,7 @@
 <meta property="og:image" content="https://github.com/2018/08/26/zabbix3-4deploy/zabbix_web_13.png">
 <meta property="og:image" content="https://github.com/2018/08/26/zabbix3-4deploy/zabbix_web_14.png">
 <meta property="og:image" content="https://github.com/2018/08/26/zabbix3-4deploy/zabbix_web_15.png">
-<meta property="og:updated_time" content="2018-08-26T12:11:49.199Z">
+<meta property="og:updated_time" content="2018-08-31T03:19:47.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7下安装zabbix3.4.12服务端和客户端">
 <meta name="twitter:description" content="环境说明操作系统：centos7 数据库：MySQL5.7 zabbix版本：3.4.12 zabbix-server IP ：192.168.181.129 zabbix-agent IP：192.168.181.130">
@@ -374,8 +374,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-26T08:11:49-04:00">
-                2018-08-26
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-30T23:19:47-04:00">
+                2018-08-31
               </time>
             
           </span>
@@ -472,7 +472,7 @@
 <p>zabbix-server IP ：192.168.181.129</p>
 <p>zabbix-agent IP：192.168.181.130</p>
 <a id="more"></a>
-<h2 id="安装前注意-SELinux和防火墙检查"><a href="#安装前注意-SELinux和防火墙检查" class="headerlink" title="安装前注意 SELinux和防火墙检查"></a>安装前注意 SELinux和防火墙检查</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>临时关闭selinux</span><br><span class="line">setenforce 1</span><br><span class="line"><span class="meta">#</span>永久关闭selinux</span><br><span class="line">sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config</span><br><span class="line"><span class="meta">#</span>关闭防火墙和开机不启动（生产环境慎用，可以选择开放对应的端口）</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+<h2 id="安装前注意-SELinux和防火墙检查"><a href="#安装前注意-SELinux和防火墙检查" class="headerlink" title="安装前注意 SELinux和防火墙检查"></a>安装前注意 SELinux和防火墙检查</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>临时关闭selinux</span><br><span class="line">setenforce 0</span><br><span class="line"><span class="meta">#</span>永久关闭selinux</span><br><span class="line">sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config</span><br><span class="line"><span class="meta">#</span>关闭防火墙和开机不启动（生产环境慎用，可以选择开放对应的端口）</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
 <h2 id="安装MySQL5-7"><a href="#安装MySQL5-7" class="headerlink" title="安装MySQL5.7"></a>安装MySQL5.7</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>引入mysql源</span><br><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line"><span class="meta">#</span>安装mysql源</span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line"><span class="meta">#</span>源包管理工具</span><br><span class="line">yum -y install yum-utils</span><br><span class="line"><span class="meta">#</span>关闭默认安装的mysql8</span><br><span class="line">yum-config-manager --disable mysql80-community</span><br><span class="line"><span class="meta">#</span>启用安装mysql5.7</span><br><span class="line">yum-config-manager --enable mysql57-community</span><br><span class="line"><span class="meta">#</span>安装mysql5.7</span><br><span class="line">yum install mysql-community-server -y</span><br><span class="line"><span class="meta">#</span>启动mysql5.7</span><br><span class="line">systemctl start mysqld.service</span><br><span class="line"><span class="meta">#</span>查看临时密码</span><br><span class="line">grep 'temporary password' /var/log/mysqld.log | awk -F '[:]' '&#123;print $4&#125;' | sed 's/ //g'</span><br></pre></td></tr></table></figure>
 <p>临时密码如上图，每个人的密码不一样，这里展示我的密码 ,  esStON8wPp**</p>
 <img src="/2018/08/26/zabbix3-4deploy/MySQL_temp_passwd.png" title="临时密码">
