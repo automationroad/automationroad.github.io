@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="环境说明操作系统：centos7 数据库：MySQL5.7 zabbix版本：3.4.12 zabbix-server IP ：192.168.181.129 zabbix-agent IP：192.168.181.130">
+<meta name="description" content="环境说明操作系统：centos7 sed版本：4.2.2 egrep版本：2.20 paste版本：8.22">
 <meta name="keywords" content="MySQL,shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pick_mysql_log">
+<meta property="og:title" content="记一次Linux下提取MySQL日志关键字段">
 <meta property="og:url" content="https://github.com/automationroad/2018/08/31/pick-mysql-log/index.html">
 <meta property="og:site_name" content="Linux自动化运维之路">
-<meta property="og:description" content="环境说明操作系统：centos7 数据库：MySQL5.7 zabbix版本：3.4.12 zabbix-server IP ：192.168.181.129 zabbix-agent IP：192.168.181.130">
+<meta property="og:description" content="环境说明操作系统：centos7 sed版本：4.2.2 egrep版本：2.20 paste版本：8.22">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-01T08:25:32.965Z">
+<meta property="og:updated_time" content="2018-09-01T09:14:05.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pick_mysql_log">
-<meta name="twitter:description" content="环境说明操作系统：centos7 数据库：MySQL5.7 zabbix版本：3.4.12 zabbix-server IP ：192.168.181.129 zabbix-agent IP：192.168.181.130">
+<meta name="twitter:title" content="记一次Linux下提取MySQL日志关键字段">
+<meta name="twitter:description" content="环境说明操作系统：centos7 sed版本：4.2.2 egrep版本：2.20 paste版本：8.22">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>pick_mysql_log | Linux自动化运维之路</title>
+  <title>记一次Linux下提取MySQL日志关键字段 | Linux自动化运维之路</title>
   
 
 
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pick_mysql_log</h1>
+          <h1 class="post-title" itemprop="name headline">记一次Linux下提取MySQL日志关键字段</h1>
         
 
         <div class="post-meta">
@@ -339,7 +339,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T04:13:21+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T16:13:21-04:00">
                 2018-09-01
               </time>
             
@@ -355,7 +355,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:25:32+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T05:14:05-04:00">
                 2018-09-01
               </time>
             
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  484
+                  856
                 </span>
               
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -448,15 +448,37 @@
 
       
         <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>操作系统：centos7</p>
-<p>数据库：MySQL5.7</p>
-<p>zabbix版本：3.4.12</p>
-<p>zabbix-server IP ：192.168.181.129</p>
-<p>zabbix-agent IP：192.168.181.130</p>
+<p>sed版本：4.2.2</p>
+<p>egrep版本：2.20</p>
+<p>paste版本：8.22</p>
 <a id="more"></a>
+<h2 id="提取要求"><a href="#提取要求" class="headerlink" title="提取要求"></a>提取要求</h2><p>一次同事说，需要提取MySQL日志的关键字段，叫我帮忙，每一行一定包含4个或者7个字段，下面是字段例子</p>
+<p>IP（特殊处理为内网IP）：192.168.1.1</p>
+<p>时间：2018-07-07 19:10:18</p>
+<p>文件绝对路径：/home/hms/data/c/rec_pub_73_c/TVOD/88888905/224/3221229835/10000100000000060000000009130764_0.smil.20180707191000.ts</p>
+<p>丢包时间：1.659539</p>
+<p>上次丢包时间（不一定有）：1530961817.271825</p>
+<p>当前丢包时间（不一定有）：1530961818.935411</p>
+<p>码率（不一定有）：2540.155518</p>
+<p>如上展示，每一行一定会包含4个字段，至于后面3个只能都是有或者都没有</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>1.删除多余字段，直接得到4个或者7个字段，表达式太过复杂</p>
+<p>2.直接过滤出7个想要的字段，因为7个字段不是每一行都出来，基本上不可能实现（至少我想不到怎么写）</p>
+<p>3.重组文件，把想要的字段筛选出来，文件合并，按照字段顺序重组文件（待会使用这个思路）</p>
 <h2 id="日志样板"><a href="#日志样板" class="headerlink" title="日志样板"></a>日志样板</h2><div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
-<p>113.100.131.15 2018-07-07 19:10:18:935 C06B688SPC013 ts_record.c:11105 code:2 thread:11349 ts_packet_check: Warning: Stream /home/hms/data/c/rec_pub_73_c/TVOD/88888905/224/3221229835/10000100000000060000000009130764_0.smil.20180707191000.ts curr_lose_pkg_time 1.659539 sec,time 1530961817.271825 -&gt; 1530961818.935411 second_rate 2540.155518.<br>113.100.131.15 2018-07-07 19:15:00:056 C06B688SPC013 ts_record.c:11600 code:2 thread:11349 ts_packet_set_status: /home/hms/data/c/rec_pub_73_c/TVOD/88888905/224/3221229835/10000100000000060000000009130764_0.smil.20180707191000.ts record successfully with total_lose_pkg_time 1.659539 sec.<br>113.100.134.10 2018-07-07 04:59:25:848 C06B688SPC013 ts_record.c:11105 code:2 thread:21051 ts_packet_check: Warning: Stream /home/hms/data/c/rec_pub_68_dgcp2_c/TVOD/88888888/224/3221229808/10000100000000060000000009083746_0.smil.20180707045500.ts curr_lose_pkg_time 1.920283 sec,time 1530910763.925132 -&gt; 1530910765.848897 second_rate 2952.463135.<br>113.100.134.10 2018-07-07 05:00:00:067 C06B688SPC013 ts_record.c:11600 code:2 thread:21051 ts_packet_set_status: /home/hms/data/c/rec_pub_68_dgcp2_c/TVOD/88888888/224/3221229808/10000100000000060000000009083746_0.smil.20180707045500.ts record successfully with total_lose_pkg_time 1.920283 sec.<br>113.107.40.15 2018-07-07 03:20:36:657 C06B688SPC013 ts_record.c:11105 code:2 thread:8733 ts_packet_check: Warning: Stream /home/hms/data/c/rec_pub_c/TVOD/88888905/224/3221228954/10000100000000060000000008451604_0.smil.20180707032000.ts curr_lose_pkg_time 1.555828 sec,time 1530904835.98067 -&gt; 1530904836.657644 second_rate 2742.323242.<br>113.107.40.15 2018-07-07 03:25:00:099 C06B688SPC013 ts_record.c:11600 code:2 thread:8733 ts_packet_set_status: /home/hms/data/c/rec_pub_c/TVOD/88888905/224/3221228954/10000100000000060000000008451604_0.smil.20180707032000.ts record successfully with total_lose_pkg_time 1.555828 sec.<br>113.98.120.11 2018-07-07 00:19:14:574 C06B688SPC005 ts_record.c:11071 code:2 thread:20166 ts_packet_check: Warning: Stream /home/hms/data/c/rec_pub_c_120_11/TVOD/88888888/224/0/3221225944/iptv95872.smil.20180707001500.ts curr_lose_pkg_time 4.010903 sec,time 1530893950.558154 -&gt; 1530893954.574888 second_rate 1763.413818.<br>113.98.120.11 2018-07-07 00:20:00:110 C06B688SPC005 ts_record.c:11566 code:2 thread:20166 ts_packet_set_status: /home/hms/data/c/rec_pub_c_120_11/TVOD/88888888/224/0/3221225944/iptv95872.smil.20180707001500.ts record successfully with total_lose_pkg_time 4.010903 sec.<br>125.88.54.12 2018-07-06 23:50:00:043 info hms t=17831,c=2,v=C21SPC010,p=ts_record.c:11693,f=ts_packet_set_status /home/hms/data/e/rec_pub_e/TVOD/88888888/224/0/3221225927/iptv93342.smil.20180706234500.ts record successfully with total_lose_pkg_time 3.798769 sec.<br>183.57.58.9 2018-07-07 03:30:00:016 info hms t=17312,c=2,v=C21SPC010,p=ts_record.c:11640,f=ts_packet_set_status Error: /home/hms/data/c/rec_pub_c/TVOD/88888888/224/0/3221225864/iptv61988.smil.20180707032500.ts total_lose_pkg_time 4.102478 sec.</p>
+<p>192.168.1.1 2018-07-07 19:10:18:935 C06B688SPC013 ts_record.c:11105 code:2 thread:11349 ts_packet_check: Warning: Stream /home/hms/data/c/rec_pub_73_c/TVOD/88888905/224/3221229835/10000100000000060000000009130764_0.smil.20180707191000.ts curr_lose_pkg_time 1.659539 sec,time 1530961817.271825 -&gt; 1530961818.935411 second_rate 2540.155518.<br>192.168.1.1 2018-07-07 19:15:00:056 C06B688SPC013 ts_record.c:11600 code:2 thread:11349 ts_packet_set_status: /home/hms/data/c/rec_pub_73_c/TVOD/88888905/224/3221229835/10000100000000060000000009130764_0.smil.20180707191000.ts record successfully with total_lose_pkg_time 1.659539 sec.<br>192.168.1.1 2018-07-07 04:59:25:848 C06B688SPC013 ts_record.c:11105 code:2 thread:21051 ts_packet_check: Warning: Stream /home/hms/data/c/rec_pub_68_dgcp2_c/TVOD/88888888/224/3221229808/10000100000000060000000009083746_0.smil.20180707045500.ts curr_lose_pkg_time 1.920283 sec,time 1530910763.925132 -&gt; 1530910765.848897 second_rate 2952.463135.<br>192.168.1.1 2018-07-07 05:00:00:067 C06B688SPC013 ts_record.c:11600 code:2 thread:21051 ts_packet_set_status: /home/hms/data/c/rec_pub_68_dgcp2_c/TVOD/88888888/224/3221229808/10000100000000060000000009083746_0.smil.20180707045500.ts record successfully with total_lose_pkg_time 1.920283 sec.</p>
 
 </div></div>
+<p>这里展示部分日志样板，完整的日志文件请点击链接查看，<a href="https://github.com/automationroad/common_script/blob/master/file/hms_log_20180707.log">https://github.com/automationroad/common_script/blob/master/file/hms_log_20180707.log</a> ，建议下载下来操作一遍</p>
+<h2 id="提取字段方法"><a href="#提取字段方法" class="headerlink" title="提取字段方法"></a>提取字段方法</h2><h3 id="1、得到-IP-时间"><a href="#1、得到-IP-时间" class="headerlink" title="1、得到 IP 时间"></a>1、得到 IP 时间</h3><p>cat hms_log_20180707.log| egrep -o “([0-9]{1,3}.){3}[0-9]{1,3}[[:space:]][0-9]{4}(-[0-9]{2}){2}[[:space:]][0-9]{2}(:[0-9]{2}){2}”</p>
+<h3 id="2、得到-文件绝对路径"><a href="#2、得到-文件绝对路径" class="headerlink" title="2、得到 文件绝对路径"></a>2、得到 文件绝对路径</h3><p>cat hms_log_20180707.log | egrep -o “/home.*.ts”</p>
+<h3 id="3、得到-丢包时间"><a href="#3、得到-丢包时间" class="headerlink" title="3、得到 丢包时间"></a>3、得到 丢包时间</h3><p>cat hms_log_20180707.log | egrep -o “[[:space:]][0-9]{1,3}.[0-9]{6,7}[[:space:]]sec” | egrep -o “[0-9]{1,3}.[0-9]{6,7}”</p>
+<h3 id="4、获取-上次丢包时间、当前丢包时间、码率（不一定有）"><a href="#4、获取-上次丢包时间、当前丢包时间、码率（不一定有）" class="headerlink" title="4、获取  上次丢包时间、当前丢包时间、码率（不一定有）"></a>4、获取  上次丢包时间、当前丢包时间、码率（不一定有）</h3><p>cat hms_log_20180707.log | egrep -o “sec.*” | sed “s/ -&gt;//g” | sed “s/ second_rate//g” | sed “s/.$//g” | sed ‘s/sec,time //g’ | sed ‘s/sec//g’</p>
+<p>这里注意一个是，这三个字段不一定有，当不存在时，匹配不到需要保留空白行</p>
+<h2 id="提取过程"><a href="#提取过程" class="headerlink" title="提取过程"></a>提取过程</h2><h3 id="1、得到-IP-时间-1"><a href="#1、得到-IP-时间-1" class="headerlink" title="1、得到 IP 时间"></a>1、得到 IP 时间</h3><p>cat hms_log_20180707.log | egrep -o “([0-9]{1,3}.){3}[0-9]{1,3}[[:space:]][0-9]{4}(-[0-9]{2}){2}[[:space:]][0-9]{2}(:[0-9]{2}){2}” &gt; hms_log_20180707.log_1</p>
+<h3 id="2、得到-文件绝对路径-1"><a href="#2、得到-文件绝对路径-1" class="headerlink" title="2、得到 文件绝对路径"></a>2、得到 文件绝对路径</h3><p>cat hms_log_20180707.log | egrep -o “/home.*.ts” &gt; hms_log_20180707.log_2</p>
+<h3 id="3、得到-丢包时间-1"><a href="#3、得到-丢包时间-1" class="headerlink" title="3、得到 丢包时间"></a>3、得到 丢包时间</h3><p>cat hms_log_20180707.log | egrep -o “[[:space:]][0-9]{1,3}.[0-9]{6,7}[[:space:]]sec” | egrep -o “[0-9]{1,3}.[0-9]{6,7}” &gt; hms_log_20180707.log_3</p>
+<h3 id="4、获取-上次丢包时间、当前丢包时间、码率（不一定有）-1"><a href="#4、获取-上次丢包时间、当前丢包时间、码率（不一定有）-1" class="headerlink" title="4、获取  上次丢包时间、当前丢包时间、码率（不一定有）"></a>4、获取  上次丢包时间、当前丢包时间、码率（不一定有）</h3><p>cat hms_log_20180707.log | egrep -o “sec.*” | sed “s/ -&gt;//g” | sed “s/ second_rate//g” | sed “s/.$//g” | sed ‘s/sec,time //g’ | sed ‘s/sec//g’ &gt; hms_log_20180707.log_4</p>
+<h2 id="合成包含4或7个字段的文件"><a href="#合成包含4或7个字段的文件" class="headerlink" title="合成包含4或7个字段的文件"></a>合成包含4或7个字段的文件</h2><p>paste -d” “ hms_log_20180707.log_1 hms_log_20180707.log_2 hms_log_20180707.log_3 hms_log_20180707.log_4 | sed “s/ $//g” &gt; hms_log_20180707.log_5</p>
 
       
     </div>
@@ -477,7 +499,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link：</strong>
-    <a href="https://github.com/automationroad/2018/08/31/pick-mysql-log/" title="pick_mysql_log">https://github.com/automationroad/2018/08/31/pick-mysql-log/</a>
+    <a href="https://github.com/automationroad/2018/08/31/pick-mysql-log/" title="记一次Linux下提取MySQL日志关键字段">https://github.com/automationroad/2018/08/31/pick-mysql-log/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice： </strong>
@@ -675,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境说明"><span class="nav-number">1.</span> <span class="nav-text">环境说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志样板"><span class="nav-number">2.</span> <span class="nav-text">日志样板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境说明"><span class="nav-number">1.</span> <span class="nav-text">环境说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提取要求"><span class="nav-number">2.</span> <span class="nav-text">提取要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志样板"><span class="nav-number">4.</span> <span class="nav-text">日志样板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提取字段方法"><span class="nav-number">5.</span> <span class="nav-text">提取字段方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、得到-IP-时间"><span class="nav-number">5.1.</span> <span class="nav-text">1、得到 IP 时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、得到-文件绝对路径"><span class="nav-number">5.2.</span> <span class="nav-text">2、得到 文件绝对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、得到-丢包时间"><span class="nav-number">5.3.</span> <span class="nav-text">3、得到 丢包时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、获取-上次丢包时间、当前丢包时间、码率（不一定有）"><span class="nav-number">5.4.</span> <span class="nav-text">4、获取  上次丢包时间、当前丢包时间、码率（不一定有）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提取过程"><span class="nav-number">6.</span> <span class="nav-text">提取过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、得到-IP-时间-1"><span class="nav-number">6.1.</span> <span class="nav-text">1、得到 IP 时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、得到-文件绝对路径-1"><span class="nav-number">6.2.</span> <span class="nav-text">2、得到 文件绝对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、得到-丢包时间-1"><span class="nav-number">6.3.</span> <span class="nav-text">3、得到 丢包时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、获取-上次丢包时间、当前丢包时间、码率（不一定有）-1"><span class="nav-number">6.4.</span> <span class="nav-text">4、获取  上次丢包时间、当前丢包时间、码率（不一定有）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合成包含4或7个字段的文件"><span class="nav-number">7.</span> <span class="nav-text">合成包含4或7个字段的文件</span></a></li></ol></div>
             
 
           </div>
@@ -709,7 +731,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">4.3k</span>
+    <span title="博客全站字数">4.7k</span>
   
 </div>
 
