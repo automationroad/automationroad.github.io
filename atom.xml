@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/automationroad/"/>
-  <updated>2018-09-01T09:17:33.939Z</updated>
+  <updated>2018-09-07T06:00:47.851Z</updated>
   <id>https://github.com/automationroad/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis开发与运维</title>
+    <link href="https://github.com/automationroad/2018/09/06/redis-develop-operation/"/>
+    <id>https://github.com/automationroad/2018/09/06/redis-develop-operation/</id>
+    <published>2018-09-06T17:56:45.000Z</published>
+    <updated>2018-09-07T06:00:47.851Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第1章-初识Redis&quot;&gt;&lt;a href=&quot;#第1章-初识Redis&quot; class=&quot;headerlink&quot; title=&quot;第1章 初识Redis&quot;&gt;&lt;/a&gt;第1章 初识Redis&lt;/h2&gt;&lt;h3 id=&quot;1-2-Redis特性&quot;&gt;&lt;a href=&quot;#1-2-Redis特性&quot; class=&quot;headerlink&quot; title=&quot;1.2 Redis特性&quot;&gt;&lt;/a&gt;1.2 Redis特性&lt;/h3&gt;&lt;h4 id=&quot;1-速度快&quot;&gt;&lt;a href=&quot;#1-速度快&quot; class=&quot;headerlink&quot; title=&quot;1.速度快&quot;&gt;&lt;/a&gt;1.速度快&lt;/h4&gt;&lt;p&gt;Redis执行命令速度快，官方给出的数字是读写性能达到10万/秒，原因归纳为以下四点：&lt;/p&gt;
+&lt;p&gt;Redis的数据运行在内存中，这是速度快的最主要原因&lt;/p&gt;
+&lt;p&gt;Redis采用C语言开发，C语言距离操作系统近，执行速度快&lt;/p&gt;
+&lt;p&gt;Redis使用单线程架构，避免多线程可能产生的竞争问题&lt;/p&gt;
+&lt;p&gt;开发者开发的Redis代码质量高&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="https://github.com/automationroad/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="https://github.com/automationroad/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="redis" scheme="https://github.com/automationroad/tags/redis/"/>
+    
+      <category term="分布式" scheme="https://github.com/automationroad/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次Linux下提取MySQL日志关键字段</title>
