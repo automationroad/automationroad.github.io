@@ -88,22 +88,22 @@
 
 
 
-<meta name="description" content="环境说明系统版本：centos7vim版本：7.4安装git工具整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件适用：Linux系统（centos，Redhat，Ubuntu等等）">
+<meta name="description" content="环境说明系统版本：centos7 vim版本：7.4 安装git工具 整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件 适用：Linux系统（centos，Redhat，Ubuntu等等）">
 <meta name="keywords" content="IDE,个性化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="打造个人的vimIDE">
 <meta property="og:url" content="https://github.com/automationroad/2018/10/02/vimIDE-config/index.html">
 <meta property="og:site_name" content="Linux自动化运维之路">
-<meta property="og:description" content="环境说明系统版本：centos7vim版本：7.4安装git工具整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件适用：Linux系统（centos，Redhat，Ubuntu等等）">
+<meta property="og:description" content="环境说明系统版本：centos7 vim版本：7.4 安装git工具 整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件 适用：Linux系统（centos，Redhat，Ubuntu等等）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/1.jpg">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/2.jpg">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/0351AE01.png">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/3.png">
-<meta property="og:updated_time" content="2018-10-03T04:38:53.851Z">
+<meta property="og:updated_time" content="2018-10-03T04:42:41.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打造个人的vimIDE">
-<meta name="twitter:description" content="环境说明系统版本：centos7vim版本：7.4安装git工具整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件适用：Linux系统（centos，Redhat，Ubuntu等等）">
+<meta name="twitter:description" content="环境说明系统版本：centos7 vim版本：7.4 安装git工具 整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件 适用：Linux系统（centos，Redhat，Ubuntu等等）">
 <meta name="twitter:image" content="https://github.com/2018/10/02/vimIDE-config/1.jpg">
 
 
@@ -360,7 +360,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-03T00:38:53-04:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-03T00:42:41-04:00">
                 2018-10-03
               </time>
             
@@ -452,7 +452,11 @@
       
 
       
-        <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>系统版本：centos7<br>vim版本：7.4<br>安装git工具<br>整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件<br>适用：Linux系统（centos，Redhat，Ubuntu等等）</p>
+        <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>系统版本：centos7</p>
+<p>vim版本：7.4</p>
+<p>安装git工具</p>
+<p>整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件</p>
+<p>适用：Linux系统（centos，Redhat，Ubuntu等等）</p>
 <a id="more"></a>
 <h2 id="vim帮助文档"><a href="#vim帮助文档" class="headerlink" title="vim帮助文档"></a>vim帮助文档</h2><p>1、vim快速入门文档，系统自带的简易教程，命令行输入 vimtutor ，文档是中文的<br>2、命令行输入 vim ，命令模式下输  :help  ，这个是多窗口，输入  :help | only 设置只在一个窗口中显示，<br>这里说明一下，系统自带的vim说明文档是英文的，设置为中文的方法</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">cd ~</span><br><span class="line">wget http://sourceforge.net/projects/vimcdoc/files/vimcdoc/1.8.0/vimcdoc-1.8.0.tar.gz</span><br><span class="line">tar --no-same-owner -zxf vimcdoc-1.8.0.tar.gz</span><br><span class="line">[ ! -d ~/.vim ] &amp;&amp; mkdir ~/.vim</span><br><span class="line">mv vimcdoc-1.8.0 ~/.vim/doc</span><br><span class="line">cd ~/.vim/doc</span><br><span class="line"><span class="meta">#</span> 安装中文文档用 i 参数，卸载使用 u 参数</span><br><span class="line">./vimcdoc.sh -i</span><br><span class="line"><span class="meta">#</span> 到这一步已经可以打开vim查看中文帮助文档了，如果还是英文，则需要在配置文件修改，以下列出操作</span><br><span class="line">[ ! -f ~/.vimrc ] &amp;&amp; touch ~/.vimrc</span><br><span class="line">echo 'set helplang=cn' &gt;&gt; ~/.vimrc</span><br><span class="line"><span class="meta">#</span> vim中文文档不会覆盖原英文文档，安装后vim默认使用中文文档。若想使用英文文档，可在vim中执行以下命令：</span><br><span class="line"><span class="meta">#</span> :set helplang=en 回车之后 :help 就是英文的help。</span><br><span class="line"><span class="meta">#</span> 同理，使用以下命令可重新使用中文文档：</span><br><span class="line"><span class="meta">#</span> :set helplang=cn 回车之后 :help 就是中文的help。</span><br></pre></td></tr></table></figure>
