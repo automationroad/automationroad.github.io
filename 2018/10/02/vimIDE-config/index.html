@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="生活," />
+  <meta name="keywords" content="IDE,个性化," />
 
 
 
@@ -88,18 +88,23 @@
 
 
 
-<meta name="description" content="我的故事">
-<meta name="keywords" content="生活">
+<meta name="description" content="环境说明系统版本：centos7 vim版本：7.4 安装git工具 整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件 适用：Linux系统（centos，Redhat，Ubuntu等等）">
+<meta name="keywords" content="IDE,个性化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客之路">
-<meta property="og:url" content="https://github.com/automationroad/2018/08/21/博客之路/index.html">
+<meta property="og:title" content="vimIDE_config">
+<meta property="og:url" content="https://github.com/automationroad/2018/10/02/vimIDE-config/index.html">
 <meta property="og:site_name" content="Linux自动化运维之路">
-<meta property="og:description" content="我的故事">
+<meta property="og:description" content="环境说明系统版本：centos7 vim版本：7.4 安装git工具 整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件 适用：Linux系统（centos，Redhat，Ubuntu等等）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-22T00:12:29.578Z">
+<meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/1.jpg">
+<meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/2.jpg">
+<meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/0351AE01.png">
+<meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/3.png">
+<meta property="og:updated_time" content="2018-10-03T04:16:05.640Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客之路">
-<meta name="twitter:description" content="我的故事">
+<meta name="twitter:title" content="vimIDE_config">
+<meta name="twitter:description" content="环境说明系统版本：centos7 vim版本：7.4 安装git工具 整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件 适用：Linux系统（centos，Redhat，Ubuntu等等）">
+<meta name="twitter:image" content="https://github.com/2018/10/02/vimIDE-config/1.jpg">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/automationroad/2018/08/21/博客之路/"/>
+  <link rel="canonical" href="https://github.com/automationroad/2018/10/02/vimIDE-config/"/>
 
 
 
 
 
-  <title>博客之路 | Linux自动化运维之路</title>
+  <title>vimIDE_config | Linux自动化运维之路</title>
   
 
 
@@ -310,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/automationroad/2018/08/21/博客之路/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/automationroad/2018/10/02/vimIDE-config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="浪子尘心">
@@ -327,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">博客之路</h1>
+          <h1 class="post-title" itemprop="name headline">vimIDE_config</h1>
         
 
         <div class="post-meta">
@@ -339,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-21T08:01:13-04:00">
-                2018-08-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-02T23:23:16+08:00">
+                2018-10-02
               </time>
             
 
@@ -355,8 +360,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-21T20:12:29-04:00">
-                2018-08-22
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-03T12:16:05+08:00">
+                2018-10-03
               </time>
             
           </span>
@@ -374,8 +379,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/个人/" itemprop="url" rel="index">
-                    <span itemprop="name">个人</span>
+                  <a href="/categories/vim/" itemprop="url" rel="index">
+                    <span itemprop="name">vim</span>
                   </a>
                 </span>
 
@@ -410,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,937
+                  3,135
                 </span>
               
 
@@ -426,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  14
                 </span>
               
             </div>
@@ -447,21 +452,83 @@
       
 
       
-        <h2 id="我的故事"><a href="#我的故事" class="headerlink" title="我的故事"></a>我的故事</h2><a id="more"></a>
-<p>  最近感触许多，找到方向就像觉醒了的感觉，简单说一下我的事，我是去年毕业，实习工作是Java爬虫，转正后，当时的运维走了，上面看我实习期表现不错，让我接手运维工作，回想起来，当初是从零开始的，命令是复制粘贴的，当时为了工作网上看资料，开始接触Linux，第一个看完的教程是菜鸟教程的Linux，看完感觉不够全面，于是自己网上找了鸟哥私房菜的基础篇和服务器篇，当时没有什么决心学习，而且这两本书都是1000+页的书，第一本花了大概3个月看完，看完有兴趣了第二本书1个月就看完了（天天看，早上，上班，下班，车上），当时感觉对Linux算是有个基本的认识了，想过考红帽认证，但是网上看看别人评价，作用不是很大，而且花很多精力，就没有去考了。</p>
-<h2 id="迷茫期"><a href="#迷茫期" class="headerlink" title="迷茫期"></a>迷茫期</h2><p>  当我看完鸟哥的书，了解的东西多了之后，认识到越来越多自己不会的了，Linux运维也有几个方向，对于方向的选择没有概念，不知道自己想要哪一个，所以从18年1月到7月之前的6个月是迷茫的，当时马上过年了，过年跟年后发生了一些事，我沉沦了几个月，直到我下定决定，想清楚很多事，我一直有个习惯，微信关注了很多Linux相关的公众号，每天都会刷新闻，了解最新的新闻，技术等等，所以最后决定的方向是 Linux自动化 方向，至于为什么选择这个，用现在的感觉来说，我首先喜欢研究新技术，最近接触自动化，devops，Aiops的信息比较多，也确实对这方面感兴趣，比较符合现在的情况，我第一份工作和现在的工作服务器规模都是小规模，所以对大型维护没有经验，所以高并发这些只知道一些理论，而且没那个环境，理论也很快忘记了，现在去的第二家公司，由于我喜欢接触很东西，所以给我安排了个专门研究新技术的项目经理，我觉得蛮好的，第一天认识那个项目经理（老陈），下班了通过QQ就聊了2个小时多，聊开了就熟悉了，感觉非常搭，老陈也给我推荐了一些运维方面的东西，我记录了，不一定马上有时间做的事，我通常都是用印象笔记记下来。</p>
-<h2 id="高效时间"><a href="#高效时间" class="headerlink" title="高效时间"></a>高效时间</h2><p>  高效管理时间，我的实践是自律，一种习惯的培养过程。早上6点多起来看Python书，因为Python是自动化运维必备，看到8.15出门，路上刷新闻或者闭目休息会（我的视力好像没有5.2了），上班有空就看看PDF，最近看ansible，下班路上刷新闻或者看游戏视频放松，吃完饭回去7点多，困的话就睡到9点起来学习Python，不困就直接看书玩电脑，一般到11点多就休息了，不熬夜不躺床玩手机，对我来说，睡觉前玩手机基本上是无意义浪费时间，熬夜学习还不如早起学习，比较喜欢高效学习时间，周末早上6点起床跑步，跑完步洗个澡做个早餐吃完开始学习，这就是我现在的时间安排，坚持一段时间，3分钟热度过去后，习惯这种作息时间，做事效率也提高不少。</p>
-<h2 id="博客之路"><a href="#博客之路" class="headerlink" title="博客之路"></a>博客之路</h2><p>  偶然一次刷新闻，看到一个号主的故事，很有共鸣和励志，就加了微信聊了好多，通过老大哥的群，看到好多厉害的人，非常棒的感觉，除了微信群现在QQ群也加了几个，偶尔问问题或者解答别人的问题，看看别人走过的坑，分享的新技术，感觉还不错，最近着手准备博客，一直以来都想写博客，网上教程可用性太差了，自己写可以记录自己的心得，以及以后忘了可以找回来，通过写博客我能理解各个公众号文章背后的付出，从内容，逻辑，排版等等，真的要花很大的心思，为你们的努力点赞，维护好公众号和博客都是很花时间的，但是我写博客只是为了记录学习经验，没有想推广这些，就没有去做推广了，SEO这些也很花时间，所以现在博客只能推广链接访问，网上找不到的，嘻嘻，我以后写博客基本上会记录我的心得，这是网上文章基本上不会有的，算是给自己用的，现在接触的东西多了，视野广阔之后，更多新世界发现，以前的东西很容易忘记，既然用博客来记录当然要写好些，心得这些也要记录，免得我以后都忘了。</p>
-<h2 id="现在的感受"><a href="#现在的感受" class="headerlink" title="现在的感受"></a>现在的感受</h2><p>规律的作息让我效率提高不少，接触的事物越多，觉得时间越来越少，所以我常常对自己说，你没有剩下可以浪费的时间了，尤其是懒惰的时候会想起，现在的职业技能掌握不多，很多只是初级了解，而且并不全面，所以以后要学的很多，python是自动化运维必不可少的，而且掌握一门开发语言对职业发展帮助很大，可以贯通很多方面知识，形成一个整体，所以现在天天学python，通过新闻也了解很多新技术，无论怎样python是要一直坚持的，最近买了极客时间APP上的一些讲座课程，尝试快餐式学习，毕竟很多时候自己学，通过业界大咖可以更容易了解上手，虽然我一直看PDF，视频虽然效果好，但是太花时间，而且全程下来必须高度集中精神，看书我也能理解，速度更快，这里说一下看书的感想，很多了解一个新事物，跟着书里走，可能效果不太好，应该有个大局观，站在作者的角度了解或许会好很多，流行的技术必然上手不难，至于深入就要看个人了。</p>
-<h2 id="想学的技术或者工具"><a href="#想学的技术或者工具" class="headerlink" title="想学的技术或者工具"></a>想学的技术或者工具</h2><p>数据库：MySQL，Oracle，MongoDB，Redis</p>
-<p>网络：打算看极客时间上的一个讲座，我对网络方面的理解差，看书云里雾里的还是不懂，所以我想换一种学习方法，虽然一直都是看书学习，但是效果不好的时候就要考虑变通了</p>
-<p>CI/CD，持续集成/交付/部署：自学了Jenkins，gitlab，现在看看极客时间的一个讲座，全面了解一下，看看业界大咖是怎么理解的。</p>
-<p>自动化管理：ansible，（saltstack复杂一些，而且没那么多时间精力学同类的）</p>
-<p>监控：zabbix，Prometheus，falcon-plus（小米开源）</p>
-<p>虚拟化：docker，k8s</p>
-<p>CMDB：jumpserver，adminset</p>
-<p>python应用方向：爬虫，运维脚本，web，（大数据，深度学习，AI）这些是智能运维的，也是所有的运维最理想的情况，以后到了那个层次再学习吧，哈哈先把全面的学了再说</p>
-<p>暂时记录这些吧，把接触的想了想，大概就这些。</p>
+        <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>系统版本：centos7</p>
+<p>vim版本：7.4</p>
+<p>安装git工具</p>
+<p>整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件</p>
+<p>适用：Linux系统（centos，Redhat，Ubuntu等等）</p>
+<a id="more"></a>
+<h2 id="vim帮助文档"><a href="#vim帮助文档" class="headerlink" title="vim帮助文档"></a>vim帮助文档</h2><p>1、vim快速入门文档，系统自带的简易教程，命令行输入 vimtutor ，文档是中文的</p>
+<p>2、命令行输入 vim ，命令模式下输  :help  ，这个是多窗口，输入  :help | only 设置只在一个窗口中显示，</p>
+<p>这里说明一下，系统自带的vim说明文档是英文的，设置为中文的方法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">cd ~</span><br><span class="line">wget http://sourceforge.net/projects/vimcdoc/files/vimcdoc/1.8.0/vimcdoc-1.8.0.tar.gz</span><br><span class="line">tar --no-same-owner -zxf vimcdoc-1.8.0.tar.gz</span><br><span class="line">[ ! -d ~/.vim ] &amp;&amp; mkdir ~/.vim</span><br><span class="line">mv vimcdoc-1.8.0 ~/.vim/doc</span><br><span class="line">cd ~/.vim/doc</span><br><span class="line"><span class="meta">#</span> 安装中文文档用 i 参数，卸载使用 u 参数</span><br><span class="line">./vimcdoc.sh -i</span><br><span class="line"><span class="meta">#</span> 到这一步已经可以打开vim查看中文帮助文档了，如果还是英文，则需要在配置文件修改，以下列出操作</span><br><span class="line">[ ! -f ~/.vimrc ] &amp;&amp; touch ~/.vimrc</span><br><span class="line">echo 'set helplang=cn' &gt;&gt; ~/.vimrc</span><br><span class="line"><span class="meta">#</span> vim中文文档不会覆盖原英文文档，安装后vim默认使用中文文档。若想使用英文文档，可在vim中执行以下命令：</span><br><span class="line"><span class="meta">#</span> :set helplang=en 回车之后 :help 就是英文的help。</span><br><span class="line"><span class="meta">#</span> 同理，使用以下命令可重新使用中文文档：</span><br><span class="line"><span class="meta">#</span> :set helplang=cn 回车之后 :help 就是中文的help。</span><br></pre></td></tr></table></figure>
+<h2 id="自定义文件头部信息"><a href="#自定义文件头部信息" class="headerlink" title="自定义文件头部信息"></a>自定义文件头部信息</h2><p>相信这个文件头信息每个小伙伴都会有自己的自定义，这里给出我自己的模板，各位可以根据模板自行修改</p>
+<h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p>shell效果图</p>
+<img src="/2018/10/02/vimIDE-config/1.jpg" title="shell模板">
+<p>python效果图</p>
+<img src="/2018/10/02/vimIDE-config/2.jpg" title="python模板">
+<p>上面的两张图中， Last Changed 字段会根据vim修改文件的时间自动更新，特性和vim更新文件修改时间一样，退出时，按 q 或 q! 不更新时间，qw 一定会更新修改时间，x 当文件有修改时间更新修改时间。</p>
+<h4 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a>模板代码</h4><div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
+<p>“ 用户vim配置调用模板，路径：~/.vim/vim_header_model/vim_header ,这里自定义了shell和python的文件头信息<br>autocmd BufNewFile <em>.cc,</em>.sh,<em>.java,</em>.cpp,<em>.h,</em>.hpp,<em>.py,</em>.lua exec “:call SetTitle()”</p>
+<p>“定义函数SetTitle，自动插入文件头<br>func SetTitle()<br>​    let filetype_name = strpart(expand(“%”), stridx(expand(“%”), “.”))<br>​    let file_name = strpart(expand(“%”), 0, stridx(expand(“%”), “.”))<br>​    if file_name =~ “\/“<br>​        let file_name = strpart(file_name, strridx(file_name, “/“) + 1)<br>​    endif<br>​    let time_value = strftime(“%Y-%m-%d %H:%M:%S”)<br>​    if filetype_name == “.sh”<br>​        call setline(1, “#!/bin/bash”)<br>​        call append(line(“.”), “”)<br>​        call append(line(“.”)+1, “#########################################################################”)<br>​        call append(line(“.”)+2, “# File Name: “. file_name . filetype_name)<br>​        call append(line(“.”)+3, “# Author: 浪子尘心”)<br>​        call append(line(“.”)+4, “# Mail: <a href="mailto:hj536418286@gmail.com" target="_blank" rel="noopener">hj536418286@gmail.com</a>“)<br>​        call append(line(“.”)+5, “# Created Time: “.time_value)<br>​        call append(line(“.”)+6, “# Last Changed: “.time_value)<br>​        call append(line(“.”)+7, “# Description: “)<br>​        call append(line(“.”)+8, “# Version: “)<br>​        call append(line(“.”)+9, “#########################################################################”)<br>​        call append(line(“.”)+10, “”)<br>​        call append(line(“.”)+11, “”)<br>​    else<br>​        if filetype_name == “.py”<br>​            call setline(1, “#!/usr/bin/env python3”)<br>​            call setline(2, “# -<em>- coding: utf-8 -</em>-“)<br>​            call append(line(“.”)+1, “”)<br>​            call append(line(“.”)+2, “#########################################################################”)<br>​            call append(line(“.”)+3, “# File Name: “. file_name . filetype_name)<br>​            call append(line(“.”)+4, “# Author: 浪子尘心”)<br>​            call append(line(“.”)+5, “# Mail: <a href="mailto:hj536418286@gmail.com" target="_blank" rel="noopener">hj536418286@gmail.com</a>“)<br>​            call append(line(“.”)+6, “# Created Time: “.time_value)<br>​            call append(line(“.”)+7, “# Last Modified: “.time_value)<br>​            call append(line(“.”)+8, “# Description: “)<br>​            call append(line(“.”)+9, “# Version: “)<br>​            call append(line(“.”)+10, “#########################################################################”)<br>​            call append(line(“.”)+11, “”)<br>​            call append(line(“.”)+12, “”)<br>​        endif<br>​    endif<br>endfunc</p>
+
+</div></div>
+<h4 id="自动修改时间"><a href="#自动修改时间" class="headerlink" title="自动修改时间"></a>自动修改时间</h4><div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
+<p>“ ~/.vimrc 用户vim配置<br>“ 关于更新时间说明：退出时按 ‘wq’ 自动更新时间，不论是否有修改；按 ‘x’ 则文件有修改时更新， 按 ‘q’ 更新时间无变化<br>“ modify the last modified time of a file<br>function SetLastModifiedTime(lineno)<br>​    let modif_time = strftime(“%Y-%m-%d %H:%M:%S”)<br>​    if a:lineno == “-1”<br>​            let line = getline(9)<br>​    else<br>​            let line = getline(a:lineno)<br>​    endif</p>
+<p>if line =~ ‘\sLast Modified:’<br>​        let line = strpart(line, 0, stridx(line, “:”)) . “: “ . modif_time<br>endif  </p>
+<p>if a:lineno == “-1”<br>​        call setline(9, line)<br>else<br>​        call append(a:lineno, line)<br>endif</p>
+<p>endfunc<br>“ 修改shell脚本的更新时间<br>function SetLastModifiedTime_sh(lineno_sh)<br>​    let modif_time_sh = strftime(“%Y-%m-%d %H:%M:%S”)<br>​    if a:lineno_sh == “-2”<br>​            let line_sh = getline(8)<br>​    else<br>​            let line_sh = getline(a:lineno_sh)<br>​    endif</p>
+<p>if line_sh =~ ‘\sLast Modified:’<br>​        let line_sh = strpart(line_sh, 0, stridx(line_sh, “:”)) . “: “ .  modif_time_sh<br>endif  </p>
+<p>if a:lineno_sh == “-2”<br>​        call setline(8, line_sh)<br>else<br>​        call append(a:lineno_sh, line_sh)<br>endif  </p>
+<p>endfunc</p>
+<p>“ map the SetLastModifiedTime command automatically<br>autocmd BufWrite <em>.py call SetLastModifiedTime(-1)<br>autocmd BufWrite </em>.sh call SetLastModifiedTime_sh(-2)<br>“ 加载文件头模板<br>run vim_template/vim_header</p>
+
+</div></div>
+<p>这里的最后一次修改时间，代码跟行数有关系，例如python的字段在第9行，shell的在第8行，修改模板的时候留意一下是否和自动修改时间对应的行数相同</p>
+<h2 id="自定义IDE"><a href="#自定义IDE" class="headerlink" title="自定义IDE"></a>自定义IDE</h2><p>关于自定义IDE，每个人的需求不同，这里配置shell和python的环境，python为主。</p>
+<p>这里将自定义模块部分单独拆开成一个文件 .vimrc.bundles，.vimrc 文件指定加载</p>
+<p>修改 .vimrc 增加加载 .vimrc.bundles </p>
+<p>“ 加载自己定义的语言编辑器配置，包括python，shell<br>if filereadable(expand(“~/.vimrc.bundles”))<br>​    source ~/.vimrc.bundles<br>endif</p>
+<p> .vimrc.bundles 文件内容，” 开头表示注释，各个插件都有说明</p>
+<p>“ required 关闭与vi的兼容模式<br>set nocompatible<br>“ required<br>filetype off</p>
+<p>“设置Vundle的运行路径，Vundle 是一个vim插件管理器，相当于python的pip<br>set rtp+=~/.vim/bundle/Vundle.vim<br>“设置插件的安装路径,vundle插件起始标志<br>call vundle#begin(‘~/.vim/bundle’)<br>“让vundle管理插件版本<br>Plugin ‘VundleVim/Vundle.vim’<br>“添加nerdtree插件，目录树插件<br>Plugin ‘scrooloose/nerdtree’<br>“使用tab键切换窗口与目录树，实际上没体验到，而且tab键和jedi补全有冲突，所以安装上一个目录树插件也够用<br>“Plugin ‘jistr/vim-nerdtree-tabs’<br>“ 添加代码补全插件，YouCompleteMe 插件比 Jedi-vim 功能更丰富,但是由于YCM太笨重，安装可以考虑jedi-vim<br>Plugin ‘davidhalter/jedi-vim’<br>Plugin ‘ervandew/supertab’<br>“Plugin ‘Valloric/YouCompleteMe’<br>“ Python集成开发插件，整合了pylint, rope, pydoc, pyflakes, pep8, and mccabe，但是GitHub上说这个插件跟jedi-vim有冲突<br>“ Plugin ‘klen/python-mode’<br>“添加PEP8代码风格检查，运行F7就可以进行flake8检查了<br>Plugin ‘nvie/vim-flake8’<br>“配色方案<br>Plugin ‘jnurmine/Zenburn’<br>Plugin ‘altercation/vim-colors-solarized’<br>“代码折叠插件<br>Plugin ‘tmhedberg/SimpylFold’<br>“在vim的normal模式下搜索文件，normal模式就是ESC按键之后的模式<br>Plugin ‘kien/ctrlp.vim’<br>“比Powerline更好的状态栏显示插件,可以显示当前的虚拟环境、Git分支、正在编辑的文件等信息<br>Plugin ‘vim-airline/vim-airline’<br>“ Git集成,可以在Vim中执行基本的Git命令<br>Plugin ‘tpope/vim-fugitive’<br>“ 为nerdtree添加git支持<br>Plugin ‘Xuyuanp/nerdtree-git-plugin’<br>“ Markdown语法高亮插件<br>Plugin ‘godlygeek/tabular’<br>Plugin ‘plasticboy/vim-markdown’<br>“ 显示缩进对齐线插件<br>Plugin ‘Yggdroot/indentLine’<br>“ 代码片段补全<br>Plugin ‘honza/vim-snippets’<br>“ 自动格式化工具，安装后运行:Autopep8就可以自动依照pep8的标准自动格式化代码<br>Plugin ‘tell-k/vim-autopep8’<br>“你的所有插件需要在下面这行之前<br>call vundle#end() </p>
+<p>“python with virtualenv support 虚拟环境支持<br>py &lt;&lt; EOF<br>import os.path<br>import sys<br>import vim<br>if ‘VIRTUA_ENV’ in os.environ:<br>  project_base_dir = os.environ[‘VIRTUAL_ENV’]<br>  sys.path.insert(0, project_base_dir)<br>  activate_this = os.path.join(project_base_dir,’bin/activate_this.py’)<br>  execfile(activate_this, dict(<strong>file</strong>=activate_this))<br>EOF</p>
+<p>“ jedi-vim 配置,第一行是启用tab键补全，第二行是禁用 . 补全<br>“ let g:SuperTabDefaultCompletionType = “context”<br>“ let g:jedi#popup_on_dot = 0</p>
+<p>“设置分割窗口<br>set splitbelow<br>set splitright<br>“设置窗口切换快捷键，例如，打开目录树的情况下，需要两个窗口来回切换<br>nnoremap <c-j> <c-w><c-j><br>nnoremap <c-k> <c-w><c-k><br>nnoremap <c-l> <c-w><c-l><br>nnoremap <c-h> <c-w><c-h></c-h></c-w></c-h></c-l></c-w></c-l></c-k></c-w></c-k></c-j></c-w></c-j></p>
+<p>“设置按F2启动NerdTree，开关树形目录的快捷键<br>map <f2> :NERDTreeToggle<cr></cr></f2></p>
+<p>“ 设置快捷键F8代替:Autopep8<br>autocmd FileType python noremap <buffer> <f8> :call Autopep8()<cr><br>“ 保存文件时，自动格式化<br>let g:autopep8_on_save = 1</cr></f8></buffer></p>
+<p>“隐藏目录树种的.pyc文件<br>let NERDTreeIgnore=[‘.pyc$’, ‘~$’] “ignore files in NERDTree</p>
+<p>“设置主题颜色，以及设置快捷键F5，确定什么模式下使用何种方案<br>if has(‘gui_running’)<br>  set background=dark<br>  colorscheme solarized  “GUI模式<br>else<br>  colorscheme zenburn    “终端模式<br>endif<br>call togglebg#map(“<f5>“)</f5></p>
+<p>“开启代码折叠<br>set foldmethod=indent<br>set foldlevel=99<br>“设置快捷键为空格<br>noremap <space> za<br>“显示折叠代码的文档字符串<br>let g:SimpylFold_docstring_preview=1</space></p>
+<p>“python代码缩进PEP8风格，这里加上shell风格和python一样<br>au BufNewFile,BufRead <em>.py,</em>.pyw set tabstop=4<br>au BufNewFile,BufRead <em>.py,</em>.pyw set softtabstop=4<br>au BufNewFile,BufRead <em>.py,</em>.pyw set shiftwidth=4<br>au BufNewFile,BufRead <em>.py,</em>.pyw set textwidth=79<br>au BufNewFile,BufRead <em>.py,</em>.pyw set expandtab<br>au BufNewFile,BufRead <em>.py,</em>.pyw set autoindent<br>au BufNewFile,BufRead <em>.py,</em>.pyw set fileformat=unix</p>
+<p>“对其他文件类型设置au命令<br>au BufNewFile,BufRead <em>.js, </em>.html, <em>.css set tabstop=2<br>au BufNewFile,BufRead </em>.js, <em>.html, </em>.css set softtabstop=2<br>au BufNewFile,BufRead <em>.js, </em>.html, *.css set shiftwidth=2</p>
+<p>“ shell 风格<br>“au BufNewFile,BufRead <em>.sh set nu          “在左侧行号<br>au BufNewFile,BufRead </em>.sh set tabstop=4     “tab 长度设置为 4<br>au BufNewFile,BufRead <em>.sh set nobackup    “覆盖文件时不备份<br>“au BufNewFile,BufRead </em>.sh set cursorline  “突出显示当前行<br>au BufNewFile,BufRead <em>.sh set ruler       “在右下角显示光标位置的状态行<br>au BufNewFile,BufRead </em>.sh set  showmode   “设置在命令行界面最下面显示当前模式等<br>“au BufNewFile,BufRead *.sh syntax on       “即设置语法检测，当编辑C或者Shell脚本时，关键字会用特殊颜色显示</p>
+<p>“高亮显示行伟不必要的空白字符<br>highlight Whitespace ctermbg=red guibg=red<br>au BufRead,BufNewFile <em>.py,</em>.pyw,<em>.c,</em>.h,*.sh match Whitespace /\s+$\ +/</p>
+<p>“设置行号显示<br>set nu<br>“显示匹配的括号<br>set showmatch<br>“可以在buffer的任何地方使用鼠标<br>set mouse=a<br>“ 打开时自动跳转到上次光标位置<br>if has(“autocmd”)<br>​    au BufReadPost * if line(“‘\””) &gt; 1 &amp;&amp; line(“‘\””) &lt;= line(“$”) | exe “normal! g’\”” | endif<br>endif<br>“ 默认指令记录是20<br>set history=100<br>“ 设置utf-8编码<br>set encoding=utf-8<br>let python_highlight_all=1<br>“ 语法高亮<br>syntax on<br>“ 根据不同语言类型进行不同的缩进操作<br>filetype plugin indent on</p>
+<p>这里python的自动补全插件，使用的是 jedi-vim ，YouCompleteMe太笨重安装需要时间长，没有使用</p>
+<p>python-mode 和 jedi-vim 冲突，所以没有安装</p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><h4 id="vim-安装插件的两种方法"><a href="#vim-安装插件的两种方法" class="headerlink" title="vim 安装插件的两种方法"></a>vim 安装插件的两种方法</h4><p>第一种是自行下载插件，配置 .vimrc ；第二种是使用自动管理vim插件的 vundle ，本文使用 vundle</p>
+<h4 id="安装插件管理器-vundle"><a href="#安装插件管理器-vundle" class="headerlink" title="安装插件管理器 vundle"></a>安装插件管理器 vundle</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ -d ~/.vim/bundle ] &amp;&amp; mkdir -p ~/.vim/bundle</span><br><span class="line">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure>
+<h4 id="使用vundle安装-卸载-更新插件"><a href="#使用vundle安装-卸载-更新插件" class="headerlink" title="使用vundle安装/卸载/更新插件"></a>使用vundle安装/卸载/更新插件</h4><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>到这一步已经可以使用 vundle 管理插件了，vundle管理vim有两种安装插件的方法，一个是命令行模式安装，一个是进入vim模式安装</p>
+<p>一：命令行下键入：vim +PluginInstall +qall</p>
+<p>二：在vim的normal模式中键入命令：PluginInstall</p>
+<h5 id="新增插件"><a href="#新增插件" class="headerlink" title="新增插件"></a>新增插件</h5><p>如果要安装新插件，在vimrc中加入bundle，然后执行<br>:BundleInstall</p>
+<h5 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h5><p>去掉某些自己用不到的插件: 编辑.vimrc.bundles，注释掉插件对应Bundle行即可(加一个双引号),保存退出即可</p>
+<p>“Bundle ‘fholgado/minibufexpl.vim’<br>如果想从物理上清除（删除插件文件），注释保存后再次进入vim<br>命令行模式，执行:<br>:BundleClean</p>
+<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>更新插件<br>:BundleUpdate　（更新之后，可能需要重新编译一下YCM）</p>
+<h4 id="安装插件慢的解决方法"><a href="#安装插件慢的解决方法" class="headerlink" title="安装插件慢的解决方法"></a>安装插件慢的解决方法</h4><p>找到 .vimrc.bundles 文件中需要下载的插件，手动克隆到本地 ~/.vim/bundle 目录</p>
+<h4 id="插件支持包下载"><a href="#插件支持包下载" class="headerlink" title="插件支持包下载"></a>插件支持包下载</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.vim/bundle/jedi-vim/ &amp;&amp; git submodule update --init</span><br><span class="line"><span class="meta">#</span> jedi 支持插件</span><br><span class="line">pip install jedi</span><br><span class="line">pip3 install jedi</span><br><span class="line"><span class="meta">#</span> pe8调整插件</span><br><span class="line">pip install autopep8</span><br></pre></td></tr></table></figure>
+<h4 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h4><p>要求系统中安装了git和vim</p>
+<p>命令行输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/automationroad/vimIDE_config.git</span><br><span class="line">sh vimIDE_config/deploy_vimIDE.sh</span><br></pre></td></tr></table></figure>
+<p>每个人需求不同，可以根据需求修改，GitHub项目中的 VIM常用插件列表.sh 文件还列出了一些插件的说明</p>
+<h5 id="遇到过的一些坑"><a href="#遇到过的一些坑" class="headerlink" title="遇到过的一些坑"></a>遇到过的一些坑</h5><p>1、自动更新文件修改时间，自定义模板的一定要核对，最后一次修改时间所在的行，是否和 .vimrc 文件中函数修改的对应</p>
+<p>2、插件安装慢，使用vim安装插件，下载过程非常缓慢，甚至可能会因为网络不好部分插件下载失败，相比git clone到本地慢，所以一键部署采用git直接克隆到本地</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1、vim插件丰富，插件功能的详细介绍需要到GitHub上了解，本文只是介绍安装为主，对于功能的使用还在摸索中，在编写的过程中也发现了一些新的好用的插件，各位道友有不错的插件欢迎QQ交流</p>
+<p>2、到此，一个vimIDE就打造好了，我将上面操作涉及到的文件都上传到了GitHub，并做好了一个自动部署脚本，Ubuntu系统也适用，需要的朋友可以自行下载执行安装，再次强调，整个配置是针对单个系统用户的，不是全局配置，此项目是目前的使用的配置，以后有需求会更新，觉得有用的朋友给个 star <img src="/2018/10/02/vimIDE-config/0351AE01.png"></p>
+<p>效果图</p>
+<img src="/2018/10/02/vimIDE-config/3.png" title="目录树效果">
+<p>这里有两个窗口，因为设置了鼠标在终端可用，可以用鼠标切换窗口，除了鼠标切换窗口，还可以使用 窗口切换快捷键 切换</p>
 
       
     </div>
@@ -484,7 +551,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link：</strong>
-    <a href="http://smartsi.club/2018/08/21/博客之路/" title="博客之路">http://smartsi.club/2018/08/21/博客之路/</a>
+    <a href="http://smartsi.club/2018/10/02/vimIDE-config/" title="vimIDE_config">http://smartsi.club/2018/10/02/vimIDE-config/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice： </strong>
@@ -499,7 +566,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/生活/" rel="tag"><i class="fa fa-tag"></i> 生活</a>
+            <a href="/tags/IDE/" rel="tag"><i class="fa fa-tag"></i> IDE</a>
+          
+            <a href="/tags/个性化/" rel="tag"><i class="fa fa-tag"></i> 个性化</a>
           
         </div>
       
@@ -519,15 +588,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/09/06/redis-develop-operation/" rel="next" title="Redis开发与运维">
+                <i class="fa fa-chevron-left"></i> Redis开发与运维
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/26/zabbix3-4deploy/" rel="prev" title="centos7下安装zabbix3.4.12服务端和客户端">
-                centos7下安装zabbix3.4.12服务端和客户端 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -680,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我的故事"><span class="nav-number">1.</span> <span class="nav-text">我的故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迷茫期"><span class="nav-number">2.</span> <span class="nav-text">迷茫期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高效时间"><span class="nav-number">3.</span> <span class="nav-text">高效时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客之路"><span class="nav-number">4.</span> <span class="nav-text">博客之路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现在的感受"><span class="nav-number">5.</span> <span class="nav-text">现在的感受</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#想学的技术或者工具"><span class="nav-number">6.</span> <span class="nav-text">想学的技术或者工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境说明"><span class="nav-number">1.</span> <span class="nav-text">环境说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim帮助文档"><span class="nav-number">2.</span> <span class="nav-text">vim帮助文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义文件头部信息"><span class="nav-number">3.</span> <span class="nav-text">自定义文件头部信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">3.0.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板代码"><span class="nav-number">3.0.2.</span> <span class="nav-text">模板代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动修改时间"><span class="nav-number">3.0.3.</span> <span class="nav-text">自动修改时间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义IDE"><span class="nav-number">4.</span> <span class="nav-text">自定义IDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">5.</span> <span class="nav-text">安装插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-安装插件的两种方法"><span class="nav-number">5.0.1.</span> <span class="nav-text">vim 安装插件的两种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装插件管理器-vundle"><span class="nav-number">5.0.2.</span> <span class="nav-text">安装插件管理器 vundle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用vundle安装-卸载-更新插件"><span class="nav-number">5.0.3.</span> <span class="nav-text">使用vundle安装/卸载/更新插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">5.0.3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新增插件"><span class="nav-number">5.0.3.2.</span> <span class="nav-text">新增插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卸载"><span class="nav-number">5.0.3.3.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更新"><span class="nav-number">5.0.3.4.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装插件慢的解决方法"><span class="nav-number">5.0.4.</span> <span class="nav-text">安装插件慢的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件支持包下载"><span class="nav-number">5.0.5.</span> <span class="nav-text">插件支持包下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一键部署"><span class="nav-number">5.0.6.</span> <span class="nav-text">一键部署</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#遇到过的一些坑"><span class="nav-number">5.0.6.1.</span> <span class="nav-text">遇到过的一些坑</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
