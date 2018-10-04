@@ -98,9 +98,11 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/1.jpg">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/2.jpg">
+<meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/2_1.png">
+<meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/2_2.jpg">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/0351AE01.png">
 <meta property="og:image" content="https://github.com/2018/10/02/vimIDE-config/3.png">
-<meta property="og:updated_time" content="2018-10-03T05:37:03.756Z">
+<meta property="og:updated_time" content="2018-10-04T07:56:23.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打造个人的vimIDE">
 <meta name="twitter:description" content="环境说明系统版本：centos7 vim版本：7.4 安装git工具 整体说明：本文的vim配置是针对Linux的单个系统用户，python的自动补全使用的是 jedi-vim 插件 适用：Linux系统（centos，Redhat，Ubuntu等等）">
@@ -360,8 +362,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-03T01:37:03-04:00">
-                2018-10-03
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-04T03:56:23-04:00">
+                2018-10-04
               </time>
             
           </span>
@@ -415,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,237
+                  3,365
                 </span>
               
 
@@ -517,6 +519,9 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/automationroad/vimIDE_config.git</span><br><span class="line">sh vimIDE_config/deploy_vimIDE.sh</span><br></pre></td></tr></table></figure>
 <p>每个人需求不同，可以根据需求修改，GitHub项目中的 VIM常用插件列表.sh 文件还列出了一些插件的说明</p>
 <h4 id="遇到过的一些坑"><a href="#遇到过的一些坑" class="headerlink" title="遇到过的一些坑"></a>遇到过的一些坑</h4><p>1、自动更新文件修改时间，自定义模板的一定要核对，最后一次修改时间所在的行，是否和 .vimrc 文件中函数修改的对应<br>2、插件安装慢，使用vim安装插件，下载过程非常缓慢，甚至可能会因为网络不好部分插件下载失败，相比git clone到本地慢，所以一键部署采用git直接克隆到本地</p>
+<h2 id="第二版一键部署"><a href="#第二版一键部署" class="headerlink" title="第二版一键部署"></a>第二版一键部署</h2><p>本次更新比较大，更换了插件管理器，新增主题设置，Airline主题设置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/automationroad/vimIDE_config.git</span><br><span class="line">sh vimIDE_config/second_version/deploy_vimIDE.sh</span><br></pre></td></tr></table></figure>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>快捷键的设置在 .vimrc.bundles 文件中<br>F2 开启/关闭目录树<br>F9 下一个主题<br>F10 上一个主题<br>Ctrl+H 向左切换窗口<br>Ctrl+J 向下切换窗口<br>Ctrl+K 向上切换窗口<br>Ctrl+L 向右切换窗口<br>更多设置查看配置<br>一些效果图<br><img src="/2018/10/02/vimIDE-config/2_1.png" title="编辑文件图"><br><img src="/2018/10/02/vimIDE-config/2_2.jpg" title="补全提示图"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1、vim插件丰富，插件功能的详细介绍需要到GitHub上了解，本文只是介绍安装为主，对于功能的使用还在摸索中，在编写的过程中也发现了一些新的好用的插件，各位道友有不错的插件欢迎QQ交流<br>2、到此，一个vimIDE就打造好了，我将上面操作涉及到的文件都上传到了GitHub，并做好了一个自动部署脚本，Ubuntu系统也适用，需要的朋友可以自行下载执行安装，再次强调，整个配置是针对单个系统用户的，不是全局配置，此项目是目前的使用的配置，以后有需求会更新，觉得有用的朋友给个 star <img src="/2018/10/02/vimIDE-config/0351AE01.png"><br>效果图</p>
 <img src="/2018/10/02/vimIDE-config/3.png" title="目录树效果">
 <p>这里有两个窗口，因为设置了鼠标在终端可用，可以用鼠标切换窗口，除了鼠标切换窗口，还可以使用 窗口切换快捷键 切换</p>
@@ -740,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境说明"><span class="nav-number">1.</span> <span class="nav-text">环境说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim帮助文档"><span class="nav-number">2.</span> <span class="nav-text">vim帮助文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义文件头部信息"><span class="nav-number">3.</span> <span class="nav-text">自定义文件头部信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">3.0.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板代码"><span class="nav-number">3.0.2.</span> <span class="nav-text">模板代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动修改时间"><span class="nav-number">3.0.3.</span> <span class="nav-text">自动修改时间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义IDE"><span class="nav-number">4.</span> <span class="nav-text">自定义IDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">5.</span> <span class="nav-text">安装插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-安装插件的两种方法"><span class="nav-number">5.0.1.</span> <span class="nav-text">vim 安装插件的两种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装插件管理器-vundle"><span class="nav-number">5.0.2.</span> <span class="nav-text">安装插件管理器 vundle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用vundle安装-卸载-更新插件"><span class="nav-number">5.0.3.</span> <span class="nav-text">使用vundle安装/卸载/更新插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">5.0.3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新增插件"><span class="nav-number">5.0.3.2.</span> <span class="nav-text">新增插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卸载"><span class="nav-number">5.0.3.3.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更新"><span class="nav-number">5.0.3.4.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装插件慢的解决方法"><span class="nav-number">5.0.4.</span> <span class="nav-text">安装插件慢的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件支持包下载"><span class="nav-number">5.0.5.</span> <span class="nav-text">插件支持包下载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键部署"><span class="nav-number">6.</span> <span class="nav-text">一键部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#遇到过的一些坑"><span class="nav-number">6.0.1.</span> <span class="nav-text">遇到过的一些坑</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境说明"><span class="nav-number">1.</span> <span class="nav-text">环境说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim帮助文档"><span class="nav-number">2.</span> <span class="nav-text">vim帮助文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义文件头部信息"><span class="nav-number">3.</span> <span class="nav-text">自定义文件头部信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">3.0.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板代码"><span class="nav-number">3.0.2.</span> <span class="nav-text">模板代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动修改时间"><span class="nav-number">3.0.3.</span> <span class="nav-text">自动修改时间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义IDE"><span class="nav-number">4.</span> <span class="nav-text">自定义IDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">5.</span> <span class="nav-text">安装插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-安装插件的两种方法"><span class="nav-number">5.0.1.</span> <span class="nav-text">vim 安装插件的两种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装插件管理器-vundle"><span class="nav-number">5.0.2.</span> <span class="nav-text">安装插件管理器 vundle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用vundle安装-卸载-更新插件"><span class="nav-number">5.0.3.</span> <span class="nav-text">使用vundle安装/卸载/更新插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">5.0.3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新增插件"><span class="nav-number">5.0.3.2.</span> <span class="nav-text">新增插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卸载"><span class="nav-number">5.0.3.3.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更新"><span class="nav-number">5.0.3.4.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装插件慢的解决方法"><span class="nav-number">5.0.4.</span> <span class="nav-text">安装插件慢的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件支持包下载"><span class="nav-number">5.0.5.</span> <span class="nav-text">插件支持包下载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键部署"><span class="nav-number">6.</span> <span class="nav-text">一键部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#遇到过的一些坑"><span class="nav-number">6.0.1.</span> <span class="nav-text">遇到过的一些坑</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二版一键部署"><span class="nav-number">7.</span> <span class="nav-text">第二版一键部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快捷键"><span class="nav-number">7.1.</span> <span class="nav-text">快捷键</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -774,7 +779,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">9.2k</span>
+    <span title="博客全站字数">9.3k</span>
   
 </div>
 
